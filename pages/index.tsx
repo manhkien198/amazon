@@ -2,8 +2,9 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import Banner from '../components/Banner';
 import ProductFeed from '../components/ProductFeed';
+import { ProductProps } from '../models';
 
-export default function Home() {
+export default function Home({products}:{products:ProductProps[]}) {
   return (
     <div className='bg-gray-100'>
       <Head>
@@ -15,8 +16,16 @@ export default function Home() {
       <Header />
       <main className='max-w-screen-2xl mx-auto'>
         <Banner />
-        <ProductFeed />
+        <ProductFeed products={products}/>
       </main>
     </div>
   );
+}
+export async function getStaticProps(){
+  const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/products`).then(res=>res.json())
+  return {
+    props:{
+      products:data||[]
+    }
+  }
 }
