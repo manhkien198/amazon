@@ -1,4 +1,4 @@
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: 'AIzaSyB-snwcEZp3qsUJrE9Mu2BKWziUpXDbJv8',
   authDomain: 'clone-375417.firebaseapp.com',
   projectId: 'amazon-clone-375417',
