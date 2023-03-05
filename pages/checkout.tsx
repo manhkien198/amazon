@@ -7,7 +7,7 @@ import CheckoutProducts from '../components/CheckoutProducts';
 import Currency from 'react-currency-formatter';
 import { useSession } from 'next-auth/react';
 
-function Checkout() {
+export default function Checkout() {
   const items = useAppSelector(selectItems);
   const session = useSession();
   const total = useAppSelector(selectTotal);
