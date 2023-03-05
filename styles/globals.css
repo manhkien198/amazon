@@ -5,7 +5,16 @@
   .link {
     @apply cursor-pointer hover:underline;
   }
-  .button{
-    @apply p-2 text-xs md:text-sm bg-gradient-to-b from-yellow-200 to-yellow-400 border border-yellow-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 active:ring-yellow-500
+  .button {
+    @apply p-2 text-xs md:text-sm bg-gradient-to-b from-yellow-200 to-yellow-400 border border-yellow-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 active:ring-yellow-500;
   }
+}
+.cart-title::after {
+  content: 'Price';
+  display: block;
+  font-size: medium;
+  border-bottom: 1px solid #ccc;
+  color: #333;
+  opacity: 0.7;
+  text-align: right;
 }
