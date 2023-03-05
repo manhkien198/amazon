@@ -22,12 +22,16 @@ export default function Home({ products }: { products: ProductProps[] }) {
   );
 }
 export async function getStaticProps() {
-  const data = await fetch(`${process.env.BASE_URL}/products`).then((res) =>
-    res.json()
-  );
+  const data = await loadProducts();
   return {
     props: {
       products: data || [],
     },
   };
 }
+export const loadProducts = async () => {
+  const data = await fetch(`${process.env.BASE_URL}/products`).then((res) =>
+    res.json()
+  );
+  return data;
+};
