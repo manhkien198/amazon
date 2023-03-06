@@ -40,7 +40,8 @@ export default function Header() {
         <div className='text-white text-xs flex items-center space-x-6 mx-6 whitespace-nowrap'>
           <div
             className='link cursor-pointer'
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
               !user ? signIn() : signOut();
             }}
           >
